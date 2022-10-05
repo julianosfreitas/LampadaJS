@@ -1,0 +1,13 @@
+html{
+    margin: 25px;
+    border: 5px solid #FEE33A;
+}
+header, main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    width: 80px;
+}
