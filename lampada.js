@@ -1,5 +1,5 @@
-const turnOn = document.getElementById ('turnOn');
-const turnOff = document.getElementById ('turnOff');
+// CONSTÂNTE PARA ELEMENTO
+const turnOnOff = document.getElementById ('turnOnOff');
 const lamp = document.getElementById ('lamp');
 
 // LIGAR LÂMPADA
@@ -9,18 +9,16 @@ function lampOn () {
     }
 }
 
-turnOn.addEventListener ('click', lampOn);
+turnOnOff.addEventListener ('click', lampOnOff);
 
 //DESLIGAR LÂMPADA
 function lampOff () {
-    if (!insLampBroken () ) {
+    if (!isLampBroken () ) {
         lamp.src = './img/desligada.jpg';
     }
 }
 
-turnOff.addEventListener ('click', lampOff);
-
-//LÂMPADA LIGADR AO PASSAR O MOUSE POR CIMA
+//LÂMPADA LIGAR AO PASSAR O MOUSE POR CIMA
 lamp.addEventListener ('mouseover', lampOn);
 
 //LÂMPADA DESLIGAR AO TIRA O MOUSE DE CIMA
@@ -37,3 +35,15 @@ lamp.addEventListener('dblclick', lampBroken);
 function isLampBroken () { 
     return lamp.src.indexOf ('quebrada') > -1
 }
+
+//LÂMPADA LIGAR/DESLIGAR
+function lampOnOff () {
+    if (turnOnOff.textContent == 'Ligar') {
+        lampOn();
+        turnOnOff.textContent = 'Desligar';
+    } else {
+        lampOff();
+        turnOnOff.textContent = 'Ligar';
+    }
+}
+
